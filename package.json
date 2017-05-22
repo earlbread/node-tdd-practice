@@ -1,9 +1,28 @@
 {
   "scripts": {
+    "precommit": "xo && lint-staged",
+    "lint": "xo",
     "test": "mocha lib/**/**.spec.js"
+  },
+  "xo": {
+    "extends": "prettier",
+    "globals": [ "it", "describe" ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint",
+      "prettier --single-quote --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.4.1"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^2.1.1",
+    "lint-staged": "^3.4.2",
+    "prettier": "^1.3.1",
+    "xo": "^0.18.2"
   }
 }
