@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "mocha lib/**/**.spec.js"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.4.1"
+  }
+}
